@@ -25,3 +25,4 @@
 passenger.80.pid.lock
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+.idea

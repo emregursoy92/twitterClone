@@ -6,8 +6,10 @@ ruby '2.5.1'
 #development
 gem "unicorn"
 gem "thin"
-
 gem "passenger"
+
+gem "bootstrap"
+gem "devise"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'

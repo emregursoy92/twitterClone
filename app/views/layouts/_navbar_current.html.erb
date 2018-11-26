@@ -1,0 +1,13 @@
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item active">
+      <%= link_to "Home Page", home_path%>
+    </li>
+    <li class="nav-item" style="margin-left: 20px">
+      <%= link_to "My PAge", profile_path%>
+    </li>
+  </ul>
+  <form class="form-inline my-2 my-lg-0">
+    <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+  </form>
+</div>
