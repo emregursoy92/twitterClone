@@ -1,13 +1,13 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.1'
+ruby '2.5.3'
 
 #development
 gem "unicorn"
 gem "thin"
 gem "passenger"
-
+gem 'will_paginate'
 gem "bootstrap"
 gem "devise"
 

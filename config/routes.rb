@@ -1,10 +1,19 @@
 Rails.application.routes.draw do
+
   devise_for :users
 
-  get 'profile', to: 'home#user_page'
-  get 'home', to: 'home#index'
+  root to: 'home#index'
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root to: 'home#index'
+
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
+
+  resources :tweets,          only: [:create, :destroy]
+  resources :relationships,       only: [:create, :destroy]
 
 end
