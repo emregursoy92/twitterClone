@@ -1,8 +1,11 @@
+<div class="card">
 <%= form_for(@tweet, html: { multipart: true }) do |f| %>
-  <%= render 'static_pages/error_messages', object: f.object %>
-  <div class="field">
+  <div class="card-body">
     <%= f.text_area :content, placeholder: "New" %>
   </div>
+    <div class="card-footer bg-transparent">
   <%= f.submit "Post", class: "btn btn-primary" %>
+    </div>
 <% end %>
 
+</div>

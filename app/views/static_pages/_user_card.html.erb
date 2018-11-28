@@ -1,0 +1,37 @@
+<div class="card border-dark mb-3 ">
+  <div class="card-header">
+    <div class="row">
+      <div class="col-8">
+        <%= link_to user.email, user %>
+      </div>
+    </div>
+  </div>
+  <div class="card-body text-dark">
+    <h5 class="card-title"><%= user.username %></h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+  <div class="card-footer bg-transparent">
+    <div class="row justify-content-center">
+      <div class="col-3">
+        <a><%= pluralize(user.tweets.count, "Tweets") %></a>
+      </div>
+      <div class="col-3">
+        <a href="<%= followers_user_path(user) %>">
+          <strong id="followers" class="stat">
+            <%= user.followers.count %>
+          </strong>
+          followers
+        </a>
+      </div>
+      <div class="col-3">
+        <a href="<%= following_user_path(user) %>">
+          <strong id="following" class="stat">
+            <%= user.following.count %>
+          </strong>
+          following
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>

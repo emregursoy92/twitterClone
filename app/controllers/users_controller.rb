@@ -8,7 +8,8 @@ class UsersController < ApplicationController
     end
 
    def show
-      @user = User.find(params[:id])
+     @tweet = current_user.tweets.build
+     @user = User.find(params[:id])
       @tweets = @user.tweets.paginate(page: params[:page], per_page: 10)
     end
 

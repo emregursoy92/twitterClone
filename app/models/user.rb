@@ -14,15 +14,12 @@ class User < ApplicationRecord
 
   has_many :following, through: :follower_relationships, source: :followed
   has_many :followers, through: :followed_relationships, source: :follower
-
   def feed
     following_ids = "SELECT followed_id FROM relationships
                      WHERE  follower_id = :user_id"
     Tweet.where("user_id IN (#{following_ids})
                      OR user_id = :user_id", user_id: id)
   end
-
-
   def follow(other_user)
     follower_relationships.create(followed_id: other_user.id)
   end

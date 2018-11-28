@@ -1,22 +1,32 @@
 <div class="row">
-  <aside class="col-md-4">
-    <section>
-      <h1>
-        <%= @user.name %>
-      </h1>
-    </section>
-    <section class="stats">
-      <%= render 'static_pages/stats' %>
-    </section>
-  </aside>
-  <div class="col-md-8">
-    <%= render 'follow_form'%>
-    <% if @user.tweets.any? %>
-      <h3>Tweets (<%= @user.tweets.count %>)</h3>
-      <ol class="tweet">
-        <%= render @tweets %>
-      </ol>
-      <%= will_paginate @tweets %>
+  <div class="col-4">
+    <%= render 'static_pages/user_card' , user: @user%>
+  </div>
+  <div class="col-6">
+    <% if current_user == @user %>
+      <%= render 'static_pages/tweet_form' %>
     <% end %>
+    <%= render 'static_pages/tweets_card' %>
   </div>
 </div>
+
+<div class="col-md-12" align="center">
+  <%= render 'follow_form'%>
+</div>
+
+<%#= render 'navbar', view_type: 'profile' %>
+<!--<div class="row">-->
+<!--  <div class="col-lg-3">-->
+    <%#= render 'static_pages/user_info', view_type: 'profile', user: @user %>
+<!--  </div>-->
+<!--  <div class="col-lg-6">-->
+<!--    <div id="content">-->
+<!--      <div id="feed" class="well feed">-->
+        <%#= render(@tweets) || "No Tweets" %>
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="col-lg-3">-->
+<!--    <div class="well"></div>-->
+<!--  </div>-->
+<!--</div>-->
